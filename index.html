@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Didi! ✨</title>
+    <!-- Tailwind CSS for modern design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for premium typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&family=Cinzel:wght@600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for beautiful icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #050505;
+            overflow-x: hidden;
+        }
+        .font-cursive {
+            font-family: 'Great Vibes', cursive;
+        }
+        .font-luxury {
+            font-family: 'Cinzel', serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 10px;
+        }
+        
+        /* Metallic Golden Text & Glow (Highly Premium) */
+        .gold-text-premium {
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 2px 8px rgba(212, 175, 55, 0.4));
+        }
+        .neon-text-gold {
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+        
+        /* Luxury Border & Shadows */
+        .gold-border {
+            border-color: rgba(212, 175, 55, 0.25);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.05), inset 0 0 20px rgba(212, 175, 55, 0.05);
+        }
+        
+        /* Deep Luxury Dark Velvet Gradient Background */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .luxury-gradient {
+            background: linear-gradient(135deg, #050505, #0c0a06, #12100a, #050505);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        /* Smooth Floating Animation */
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(2deg); }
+        }
+        .float-element {
+            animation: float-slow 5s ease-in-out infinite;
+        }
+
+        /* Golden Photo Frame pulse glow */
+        .premium-frame {
+            position: relative;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3), inset 0 0 15px rgba(212, 175, 55, 0.2);
+            border: 4px double #bf953f;
+        }
+    </style>
+</head>
+<body class="luxury-gradient text-white min-h-screen flex flex-col justify-between relative overflow-x-hidden select-none">
+
+    <!-- Interactive Canvas Background for Shimmering Gold Dust & Diwali Skyrockets -->
+    <canvas id="bg-canvas" class="absolute top-0 left-0 w-full h-full pointer-events-none z-0"></canvas>
+
+    <!-- Floating Audio Control Button with Gold Theme -->
+    <button id="music-btn" class="fixed top-5 right-5 z-50 bg-amber-500 hover:bg-amber-600 text-black p-3.5 rounded-full shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all transform hover:scale-110 flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-amber-200">
+        <i id="music-icon" class="fa-solid fa-music text-xl"></i>
+    </button>
+
+    <!-- HEADER SECTION -->
+    <header class="relative z-10 w-full px-6 py-6 md:py-8 flex flex-col items-center justify-center border-b border-amber-500/10 bg-black/60 backdrop-blur-md">
+        <div class="text-center">
+            <span class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest bg-amber-500/10 text-amber-300 border border-amber-500/20 uppercase mb-3 animate-pulse">
+                ✨ Special Golden Celebration ✨
+            </span>
+            <!-- Premium Gold Title -->
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight font-luxury gold-text-premium mt-1 pb-1">
+                Happy Birthday Didi! ✨
+            </h1>
+            <p class="text-xs md:text-sm text-amber-200/60 mt-2 font-medium tracking-wider">
+                Celebrating the most beautiful & graceful sister on <span class="text-amber-300 font-bold">30th May! 🌟</span>
+            </p>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT SECTION -->
+    <main class="relative z-10 flex-grow w-full max-w-6xl mx-auto px-4 py-8 flex flex-col items-center gap-10">
+
+        <!-- DIDI'S PREMIUM PHOTO SECTION -->
+        <section class="flex flex-col items-center text-center w-full max-w-sm mt-2">
+            <div class="premium-frame w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden p-1 bg-neutral-950 transition-all duration-500 hover:scale-105">
+                <!-- IMPORTANT: Aap yahan niche "src" attribute me didi ki asli photo ka link ya path daal sakte hain -->
+                <img id="didi-photo" 
+                     src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600" 
+                     alt="Didi's Portrait" 
+                     class="w-full h-full object-cover rounded-full"
+                     onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600'" />
+            </div>
+            <div class="mt-4">
+                <h3 class="text-xl font-bold font-cursive text-amber-300 tracking-wide">Our Most Graceful Didi</h3>
+                <p class="text-xs text-amber-200/40">Sada muskurati rahein aap yuhi hamesha ✨</p>
+            </div>
+        </section>
+
+        <!-- COUNTDOWN TIMER SECTION -->
+        <section class="w-full max-w-2xl bg-black/80 backdrop-blur-md p-6 rounded-2xl border gold-border text-center">
+            <h3 class="text-amber-300/80 font-semibold tracking-wider text-sm uppercase mb-4">
+                <i class="fa-regular fa-clock mr-2"></i> Countdown To 30th May
+            </h3>
+            <div class="grid grid-cols-4 gap-2 md:gap-4 max-w-md mx-auto">
+                <div class="bg-amber-500/5 p-3 rounded-xl border border-amber-500/10">
+                    <span id="days" class="block text-2xl md:text-4xl font-bold text-amber-300">00</span>
+                    <span class="text-[10px] md:text-xs text-amber-200/40 uppercase">Days</span>
+                </div>
+                <div class="bg-amber-500/5 p-3 rounded-xl border border-amber-500/10">
+                    <span id="hours" class="block text-2xl md:text-4xl font-bold text-amber-400">00</span>
+                    <span class="text-[10px] md:text-xs text-amber-200/40 uppercase">Hours</span>
+                </div>
+                <div class="bg-amber-500/5 p-3 rounded-xl border border-amber-500/10">
+                    <span id="minutes" class="block text-2xl md:text-4xl font-bold text-amber-300">00</span>
+                    <span class="text-[10px] md:text-xs text-amber-200/40 uppercase">Mins</span>
+                </div>
+                <div class="bg-amber-500/5 p-3 rounded-xl border border-amber-500/10">
+                    <span id="seconds" class="block text-2xl md:text-4xl font-bold text-amber-400">00</span>
+                    <span class="text-[10px] md:text-xs text-amber-200/40 uppercase">Secs</span>
+                </div>
+            </div>
+            <p id="countdown-wish" class="text-amber-200 font-medium text-sm mt-4 hidden animate-bounce">
+                🎉 Its Didi's Birthday Today! God Bless Her! 🎉
+            </p>
+        </section>
+
+        <!-- INTERACTIVE GIFT BOX SECTION -->
+        <section class="flex flex-col items-center w-full max-w-md my-4">
+            <h2 class="text-xl md:text-2xl font-bold text-amber-300 mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-gift animate-bounce"></i> Didi, Click The Gift Box!
+            </h2>
+            <p class="text-xs text-amber-200/50 mb-6 text-center">There is a sweet surprise message waiting inside just for you!</p>
+            
+            <div class="relative w-64 h-64 cursor-pointer flex items-center justify-center" id="gift-box-container">
+                <!-- Golden Premium Aura -->
+                <div class="absolute inset-0 bg-amber-500/10 blur-3xl rounded-full scale-75 animate-pulse"></div>
+                
+                <!-- Animated Gift Box SVG with Premium Gold Ribbon -->
+                <svg id="gift-box-svg" class="w-48 h-48 transition-all duration-500 hover:scale-105" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Box Lid -->
+                    <g id="gift-lid" class="transition-transform duration-700 origin-bottom" style="transform-origin: 50px 35px;">
+                        <rect x="20" y="25" width="60" height="12" rx="3" fill="#1e1e1e" stroke="#bf953f" stroke-width="1.5"/>
+                        <!-- Gold Ribbon Bow -->
+                        <path d="M45 25 C45 15, 55 15, 55 25" stroke="#fcf6ba" stroke-width="4" stroke-linecap="round" fill="none"/>
+                        <path d="M35 25 C35 12, 48 18, 50 25" stroke="#bf953f" stroke-width="4" stroke-linecap="round" fill="none"/>
+                        <path d="M65 25 C65 12, 52 18, 50 25" stroke="#bf953f" stroke-width="4" stroke-linecap="round" fill="none"/>
+                    </g>
+                    <!-- Box Body (Rich Black Card with Golden Striping) -->
+                    <g id="gift-body">
+                        <rect x="25" y="37" width="50" height="43" rx="2" fill="#111111" stroke="#bf953f" stroke-width="1.5"/>
+                        <!-- Golden Ribbon Vertical -->
+                        <rect x="46" y="37" width="8" height="43" fill="#bf953f"/>
+                        <!-- Golden Ribbon Horizontal -->
+                        <rect x="25" y="55" width="50" height="6" fill="#fcf6ba"/>
+                    </g>
+                </svg>
+
+                <!-- Hearts bursting out once opened -->
+                <div id="heart-burst" class="absolute pointer-events-none w-full h-full hidden flex items-center justify-center">
+                    <span class="absolute text-amber-400 text-3xl animate-ping opacity-75">✨</span>
+                    <span class="absolute text-amber-200 text-2xl animate-ping opacity-75" style="animation-delay: 0.3s">⭐</span>
+                    <span class="absolute text-yellow-500 text-xl animate-ping opacity-75" style="animation-delay: 0.6s">💖</span>
+                </div>
+            </div>
+
+            <!-- Opened Message Modal / Box (Hidden Initially) -->
+            <div id="letter-modal" class="hidden w-full bg-neutral-950/95 backdrop-blur-xl border border-amber-500/30 p-6 rounded-2xl shadow-2xl relative mt-4 transform scale-95 opacity-0 transition-all duration-500 gold-border z-30">
+                <button id="close-letter-btn" class="absolute top-3 right-3 text-amber-200/50 hover:text-amber-200 transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+                <div class="text-center">
+                    <span class="text-amber-400 text-3xl"><i class="fa-solid fa-star animate-pulse"></i></span>
+                    <h3 class="text-2xl font-bold font-cursive text-amber-300 mt-1">Pyaari Didi Ke Liye Ek Paigham</h3>
+                    <div class="h-[1px] w-24 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto my-3"></div>
+                    <p class="text-sm text-gray-200 leading-relaxed text-left space-y-3 bg-white/5 p-4 rounded-xl border border-white/5 max-h-60 overflow-y-auto">
+                        <span>Dear Didi,</span><br><br>
+                        <span>Aap is duniya ki sabse amazing, caring aur sweet didi hain! Meri girlfriend aapko sabse zyada pyaar aur respect karti hai, aur unke zariye mujhe bhi ek behad pyari behen aur guide mili hain. ✨</span><br><br>
+                        <span>Aapka hona hi humari life me dher saari khushiyan lekar aata hai. Hum dil se dua karte hain ki aapki zindagi ka har pal hansi, khushi aur dher saari kamyabi se bhara ho!</span><br><br>
+                        <span>May this year bring you endless reasons to smile, beautiful health, and all your heart's desires. Happy Birthday 30th May, Didi! You are truly golden. 🌟</span>
+                    </p>
+                    <div class="mt-4 flex justify-center gap-4">
+                        <button onclick="triggerConfetti()" class="bg-amber-500 hover:bg-amber-600 text-black text-xs px-4 py-2 rounded-full font-bold transition-transform active:scale-95 flex items-center gap-2">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Magic Sprinkle
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHAYARI CAROUSEL SECTION -->
+        <section class="w-full max-w-3xl bg-black/60 backdrop-blur-md p-6 md:p-8 rounded-3xl border border-amber-500/10 float-element text-center font-medium">
+            <h2 class="text-2xl font-bold font-cursive text-amber-300 text-center mb-6 text-3xl flex items-center justify-center gap-3">
+                <i class="fa-solid fa-star text-amber-400"></i> Beautiful Shayari For Didi <i class="fa-solid fa-star text-amber-400"></i>
+            </h2>
+
+            <div class="relative overflow-hidden min-h-[180px] flex items-center justify-center">
+                <!-- Shayari 1 -->
+                <div id="shayari-0" class="shayari-slide transition-all duration-700 transform translate-x-0 opacity-100 flex flex-col justify-center">
+                    <p class="text-lg md:text-xl italic font-medium text-gray-100 leading-relaxed">
+                        "Khushiyon ki dhar ho, har din tyohar ho,<br>
+                        Humari pyaari didi ki zindagi me, behisaab pyaar ho.<br>
+                        Gam ka saaya kabhi aap par na aaye,<br>
+                        Aapke chehre par hamesha muskaan ki bahaar ho."
+                    </p>
+                    <span class="block mt-4 text-xs font-semibold tracking-widest text-amber-400 uppercase">— Pyaari Didi Ke Liye ❤️</span>
+                </div>
+                
+                <!-- Shayari 2 -->
+                <div id="shayari-1" class="shayari-slide absolute top-0 left-0 w-full h-full transition-all duration-700 transform translate-x-full opacity-0 flex flex-col justify-center">
+                    <p class="text-lg md:text-xl italic font-medium text-gray-100 leading-relaxed">
+                        "Phoolon ne amrit ka jaam bheja hai,<br>
+                        Suraj ne aasman se salam bheja hai,<br>
+                        Mubarak ho aapko aapka ye janamdin,<br>
+                        Humne dil se aapke liye ye paigham bheja hai."
+                    </p>
+                    <span class="block mt-4 text-xs font-semibold tracking-widest text-amber-300 uppercase">— Janamdin Mubarak Didi 🌟</span>
+                </div>
+
+                <!-- Shayari 3 -->
+                <div id="shayari-2" class="shayari-slide absolute top-0 left-0 w-full h-full transition-all duration-700 transform translate-x-full opacity-0 flex flex-col justify-center">
+                    <p class="text-lg md:text-xl italic font-medium text-gray-100 leading-relaxed">
+                        "Khuda kare aapki har tamanna puri ho jaye,<br>
+                        Aapki har raah roshni se sarabor ho jaye.<br>
+                        Aap hamesha yuhi khush-mijaz rahein,<br>
+                        Ki dekhne walo ka bhi har din haseen ho jaye."
+                    </p>
+                    <span class="block mt-4 text-xs font-semibold tracking-widest text-amber-400 uppercase">— Best Sister Ever ✨</span>
+                </div>
+            </div>
+
+            <!-- Slider controls -->
+            <div class="flex justify-center items-center gap-6 mt-6">
+                <button id="prev-btn" class="bg-white/5 hover:bg-amber-500/20 text-white w-10 h-10 rounded-full flex items-center justify-center border border-white/10 transition-all focus:outline-none">
+                    <i class="fa-solid fa-chevron-left text-sm"></i>
+                </button>
+                <div class="flex gap-2" id="carousel-dots">
+                    <span class="dot w-2 h-2 rounded-full bg-amber-400 transition-all"></span>
+                    <span class="dot w-2 h-2 rounded-full bg-gray-600 transition-all"></span>
+                    <span class="dot w-2 h-2 rounded-full bg-gray-600 transition-all"></span>
+                </div>
+                <button id="next-btn" class="bg-white/5 hover:bg-amber-500/20 text-white w-10 h-10 rounded-full flex items-center justify-center border border-white/10 transition-all focus:outline-none">
+                    <i class="fa-solid fa-chevron-right text-sm"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- SURPRISE INTERACTIVE WISH WALL (GREETINGS GRID) -->
+        <section class="w-full max-w-4xl px-4 py-6">
+            <h2 class="text-2xl font-bold text-center text-amber-300 mb-8 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-sparkles animate-pulse"></i> Beautiful Wishes For You Didi!
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="bg-gradient-to-br from-neutral-900 to-stone-950 p-6 rounded-2xl border border-amber-500/10 hover:border-amber-500/30 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-full flex items-center justify-center text-amber-400 mb-4 text-xl">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">Happiest Life Ahead</h4>
+                    <p class="text-sm text-gray-400">Didi, may your sweet smile never fade. We wish you a beautiful year packed with glorious memories, success, and love!</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-neutral-900 to-stone-950 p-6 rounded-2xl border border-amber-500/10 hover:border-amber-500/30 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-full flex items-center justify-center text-amber-300 mb-4 text-xl">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">Magical Health & Joy</h4>
+                    <p class="text-sm text-gray-400">Praying for your perfect health, peaceful mind, and strong determination. Stay as amazing and spectacular as you are!</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-neutral-900 to-stone-950 p-6 rounded-2xl border border-amber-500/10 hover:border-amber-500/30 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-full flex items-center justify-center text-amber-400 mb-4 text-xl">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">Pure Gem</h4>
+                    <p class="text-sm text-gray-400">You are the purest soul we know. Thank you for always supporting and radiating absolute love and positive energy.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="relative z-10 w-full px-6 py-6 border-t border-amber-500/10 bg-black/85 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-4 text-center">
+        <p class="text-xs text-gray-400 font-medium">
+            Designed with <i class="fa-solid fa-heart text-amber-500 animate-pulse"></i> for <span class="text-amber-400 font-bold">Didi</span>'s Special Day
+        </p>
+        <div class="flex items-center gap-3">
+            <span class="text-xs text-amber-300/80 tracking-widest font-semibold uppercase">30th May — Save The Date</span>
+        </div>
+        <p class="text-[10px] text-gray-600">
+            © 2026 Celebration Portal. All Rights Reserved.
+        </p>
+    </footer>
+
+    <!-- JS Scripts for Particles, Sound Synthesis & Carousel -->
+    <script>
+        // ----------------- BACKGROUND CANVAS ANIMATION (WITH DIWALI ROCKETS) -----------------
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let dustParticles = [];
+        let fireworks = []; // Diwali Rockets & Explosions
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Shimmering Gold Dust Class (Soft Background Starfield)
+        class GoldDust {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = Math.random() * 0.15 - 0.075;
+                this.speedY = Math.random() * 0.3 + 0.1;
+                const goldTones = [
+                    'rgba(212, 175, 55, 0.25)',  // Gold
+                    'rgba(251, 246, 186, 0.2)',  // Pale Gold
+                    'rgba(187, 143, 44, 0.15)',  // Darker brass gold
+                ];
+                this.color = goldTones[Math.floor(Math.random() * goldTones.length)];
+            }
+            update() {
+                this.y -= this.speedY;
+                this.x += this.speedX;
+                if (this.y < 0) {
+                    this.reset();
+                    this.y = canvas.height;
+                }
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // VIBRANT COLOURFUL DIWALI SKYROCKET
+        class Rocket {
+            constructor(startX, targetY) {
+                this.x = startX || Math.random() * (canvas.width * 0.8) + (canvas.width * 0.1);
+                this.y = canvas.height;
+                // Target Y is strictly in the top upper area (between 10% to 45% of total height)
+                this.targetY = targetY || Math.random() * (canvas.height * 0.35) + (canvas.height * 0.08);
+                this.speedY = Math.random() * 5 + 7; // Rocket rising speed
+                this.trail = [];
+                this.active = true;
+                // Generate a highly vibrant, beautiful random hue for rainbow explosions
+                this.hue = Math.random() * 360; 
+            }
+            update() {
+                // Rocket moves upward with slight horizontal swaying
+                this.y -= this.speedY;
+                this.x += Math.sin(this.y * 0.05) * 0.5;
+                
+                // Add coordinates to trail for glowing exhaust look
+                this.trail.push({x: this.x, y: this.y});
+                if (this.trail.length > 20) {
+                    this.trail.shift();
+                }
+
+                // Check if rocket reached its explosion height in the upper section
+                if (this.y <= this.targetY) {
+                    this.explode();
+                    this.active = false;
+                }
+            }
+            draw() {
+                // Draw trailing exhaust glow
+                ctx.beginPath();
+                for (let i = 0; i < this.trail.length; i++) {
+                    const point = this.trail[i];
+                    const opacity = i / this.trail.length;
+                    // Colorful glowing spark trail matching the rocket's hue
+                    ctx.fillStyle = `hsla(${this.hue}, 90%, 60%, ${opacity * 0.85})`;
+                    ctx.beginPath();
+                    ctx.arc(point.x, point.y, Math.random() * 2.5 + 1.2, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
+                // Rising rocket bright tip
+                ctx.fillStyle = '#ffffff';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 3.5, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            explode() {
+                // Generate beautiful big spherical explosion particle patterns
+                const particleCount = Math.floor(Math.random() * 55) + 65;
+                for (let i = 0; i < particleCount; i++) {
+                    fireworks.push(new ExplosionParticle(this.x, this.y, this.hue));
+                }
+            }
+        }
+
+        // BIG SHINING COLOURFUL SPARKS
+        class ExplosionParticle {
+            constructor(x, y, hue) {
+                this.x = x;
+                this.y = y;
+                this.angle = Math.random() * Math.PI * 2;
+                // High velocity explosion for a rich, majestic burst
+                this.speed = Math.random() * 5 + 2.5;
+                this.vx = Math.cos(this.angle) * this.speed;
+                this.vy = Math.sin(this.angle) * this.speed;
+                this.gravity = 0.09; // Downward gravity
+                this.drag = 0.95; // Atmospheric resistance
+                this.life = 1.0;
+                this.decay = Math.random() * 0.015 + 0.012;
+                this.hue = hue;
+                // Add a color shift/shimmer property for a sparkling look
+                this.shimmer = Math.random() > 0.5;
+            }
+            update() {
+                this.vx *= this.drag;
+                this.vy *= this.drag;
+                this.vy += this.gravity;
+                this.x += this.vx;
+                this.y += this.vy;
+                this.life -= this.decay;
+            }
+            draw() {
+                if (this.life <= 0) return;
+                ctx.save();
+                ctx.globalAlpha = this.life;
+                
+                // Shimmering color effect
+                const currentHue = this.shimmer ? (this.hue + Math.random() * 30) % 360 : this.hue;
+                ctx.fillStyle = `hsla(${currentHue}, 100%, 65%, ${this.life})`;
+                
+                // Particle glow shadow
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = `hsla(${currentHue}, 100%, 60%, ${this.life})`;
+                
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, Math.random() * 3 + 1.2, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        // Initialize Base Dust Particles
+        for (let i = 0; i < 70; i++) {
+            dustParticles.push(new GoldDust());
+        }
+
+        // Auto-launch colorful skyrockets nicely
+        let lastLaunch = 0;
+        function handleRockets() {
+            const now = Date.now();
+            if (now - lastLaunch > 1800) { // Rockets launch smoothly every 1.8 seconds
+                fireworks.push(new Rocket());
+                lastLaunch = now;
+            }
+        }
+
+        // Click or tap screen to launch customized rockets
+        window.addEventListener('click', (e) => {
+            // Do not launch rocket if user clicks on existing buttons, gift box, or modal
+            if (e.target.closest('button') || e.target.closest('#gift-box-container') || e.target.closest('#letter-modal')) {
+                return;
+            }
+            fireworks.push(new Rocket(e.clientX, e.clientY));
+        });
+
+        // Touch event to support mobile tapping for fireworks
+        window.addEventListener('touchstart', (e) => {
+            const touch = e.touches[0];
+            if (e.target.closest('button') || e.target.closest('#gift-box-container') || e.target.closest('#letter-modal')) {
+                return;
+            }
+            fireworks.push(new Rocket(touch.clientX, touch.clientY));
+        });
+
+        // Combined Animation Loop
+        function animateBg() {
+            // Draw luxury backdrop gradient
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // 1. Draw Star Dust
+            dustParticles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            // 2. Manage and draw Diwali Fireworks (Rockets & Particles)
+            handleRockets();
+            for (let i = fireworks.length - 1; i >= 0; i--) {
+                const f = fireworks[i];
+                f.update();
+                f.draw();
+                // Remove inactive rockets/particles
+                if (!f.active && (f instanceof Rocket)) {
+                    fireworks.splice(i, 1);
+                } else if ((f instanceof ExplosionParticle) && f.life <= 0) {
+                    fireworks.splice(i, 1);
+                }
+            }
+            
+            requestAnimationFrame(animateBg);
+        }
+        animateBg();
+
+        // ----------------- DYNAMIC COUNTDOWN TIMER -----------------
+        function updateCountdown() {
+            const now = new Date();
+            let currentYear = now.getFullYear();
+            
+            // Birthday is on 30th May
+            let targetDate = new Date(`May 30, ${currentYear} 00:00:00`);
+            
+            // If 30th May has passed this year, set for next year
+            if (now > targetDate && now.getDate() !== 30) {
+                targetDate = new Date(`May 30, ${currentYear + 1} 00:00:00`);
+            }
+
+            const difference = targetDate - now;
+
+            if (difference <= 0 && now.getDate() === 30 && now.getMonth() === 4) { // Month is 0-indexed, so 4 is May
+                // It is her birthday today!
+                document.getElementById('days').innerText = "00";
+                document.getElementById('hours').innerText = "00";
+                document.getElementById('minutes').innerText = "00";
+                document.getElementById('seconds').innerText = "00";
+                document.getElementById('countdown-wish').classList.remove('hidden');
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // ----------------- AUDIO SYNTHESIZER -----------------
+        let audioCtx = null;
+        let isPlaying = false;
+        let playTimeout = null;
+        const notes = [
+            { note: "C4", dur: 300 }, { note: "C4", dur: 100 }, { note: "D4", dur: 400 },
+            { note: "C4", dur: 400 }, { note: "F4", dur: 400 }, { note: "E4", dur: 800 },
+            
+            { note: "C4", dur: 300 }, { note: "C4", dur: 100 }, { note: "D4", dur: 400 },
+            { note: "C4", dur: 400 }, { note: "G4", dur: 400 }, { note: "F4", dur: 800 },
+            
+            { note: "C4", dur: 300 }, { note: "C4", dur: 100 }, { note: "C5", dur: 400 },
+            { note: "A4", dur: 400 }, { note: "F4", dur: 400 }, { note: "E4", dur: 400 }, { note: "D4", dur: 800 },
+            
+            { note: "A#4", dur: 300 }, { note: "A#4", dur: 100 }, { note: "A4", dur: 400 },
+            { note: "F4", dur: 400 }, { note: "G4", dur: 400 }, { note: "F4", dur: 800 }
+        ];
+
+        const freqs = {
+            "C4": 261.63, "D4": 293.66, "E4": 329.63, "F4": 349.23,
+            "G4": 392.00, "A4": 440.00, "A#4": 466.16, "C5": 523.25
+        };
+
+        function initAudio() {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+
+        function playNote(freq, duration) {
+            if (!audioCtx) return;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            
+            osc.type = 'triangle';
+            osc.frequency.value = freq;
+            
+            gain.gain.setValueAtTime(0, audioCtx.currentTime);
+            gain.gain.linearRampToValueAtTime(0.18, audioCtx.currentTime + 0.05);
+            gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration/1000);
+            
+            osc.start();
+            osc.stop(audioCtx.currentTime + duration/1000);
+        }
+
+        let noteIdx = 0;
+        function playTune() {
+            if (!isPlaying) return;
+            const current = notes[noteIdx];
+            playNote(freqs[current.note], current.dur);
+            
+            noteIdx = (noteIdx + 1) % notes.length;
+            playTimeout = setTimeout(playTune, current.dur + 120);
+        }
+
+        const musicBtn = document.getElementById('music-btn');
+        const musicIcon = document.getElementById('music-icon');
+
+        musicBtn.addEventListener('click', () => {
+            if (!audioCtx) {
+                initAudio();
+            }
+            if (isPlaying) {
+                isPlaying = false;
+                clearTimeout(playTimeout);
+                musicIcon.className = "fa-solid fa-music text-xl";
+                musicBtn.classList.remove('bg-green-500');
+                musicBtn.classList.add('bg-amber-500');
+            } else {
+                isPlaying = true;
+                noteIdx = 0;
+                playTune();
+                musicIcon.className = "fa-solid fa-pause text-xl animate-pulse";
+                musicBtn.classList.remove('bg-amber-500');
+                musicBtn.classList.add('bg-green-500');
+            }
+        });
+
+        // ----------------- PREMIUM RAINBOW CONFETTI BURST -----------------
+        function triggerConfetti() {
+            for (let i = 0; i < 45; i++) {
+                const colors = ['#bf953f', '#fcf6ba', '#b38728', '#fbf5b7', '#aa771c', '#ffffff', '#e2e8f0'];
+                const conf = {
+                    x: Math.random() * canvas.width,
+                    y: -10,
+                    size: Math.random() * 8 + 5,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speedY: Math.random() * 4 + 2.5,
+                    speedX: Math.random() * 2.5 - 1.25,
+                    rotation: Math.random() * 360,
+                    rotSpeed: Math.random() * 4 - 2
+                };
+                
+                fireworks.push({
+                    x: conf.x,
+                    y: conf.y,
+                    vx: conf.speedX,
+                    vy: conf.speedY,
+                    drag: 0.99,
+                    gravity: 0.05,
+                    life: 1.0,
+                    decay: 0.01,
+                    draw: function() {
+                        ctx.save();
+                        ctx.translate(this.x, this.y);
+                        ctx.rotate(conf.rotation);
+                        ctx.fillStyle = conf.color;
+                        ctx.fillRect(-conf.size/2, -conf.size/2, conf.size, conf.size);
+                        ctx.restore();
+                    },
+                    update: function() {
+                        this.vy += this.gravity;
+                        this.x += this.vx;
+                        this.y += this.vy;
+                        this.life -= this.decay;
+                    }
+                });
+            }
+        }
+
+        // ----------------- INTERACTIVE GIFT BOX & LETTER -----------------
+        const giftContainer = document.getElementById('gift-box-container');
+        const giftLid = document.getElementById('gift-lid');
+        const letterModal = document.getElementById('letter-modal');
+        const closeLetterBtn = document.getElementById('close-letter-btn');
+        const heartBurst = document.getElementById('heart-burst');
+
+        giftContainer.addEventListener('click', () => {
+            // Animate Lid opening
+            giftLid.style.transform = "translate(4px, -18px) rotate(-12deg)";
+            heartBurst.classList.remove('hidden');
+            
+            if (audioCtx) {
+                playNote(freqs["C5"], 500);
+            }
+            
+            triggerConfetti();
+
+            // Bring the greeting card to view smoothly
+            setTimeout(() => {
+                letterModal.classList.remove('hidden');
+                setTimeout(() => {
+                    letterModal.classList.remove('scale-95', 'opacity-0');
+                    letterModal.classList.add('scale-100', 'opacity-100');
+                }, 100);
+            }, 550);
+        });
+
+        closeLetterBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            letterModal.classList.add('scale-95', 'opacity-0');
+            letterModal.classList.remove('scale-100', 'opacity-100');
+            setTimeout(() => {
+                letterModal.classList.add('hidden');
+                // Put back the lid
+                giftLid.style.transform = "none";
+                heartBurst.classList.add('hidden');
+            }, 400);
+        });
+
+        // ----------------- SHAYARI CAROUSEL -----------------
+        const slides = document.querySelectorAll('.shayari-slide');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, idx) => {
+                slide.classList.add('absolute', 'opacity-0', 'translate-x-full');
+                slide.classList.remove('relative', 'opacity-100', 'translate-x-0');
+                dots[idx].className = "dot w-2 h-2 rounded-full bg-gray-600 transition-all";
+            });
+
+            slides[index].classList.remove('absolute', 'opacity-0', 'translate-x-full');
+            slides[index].classList.add('relative', 'opacity-100', 'translate-x-0');
+            dots[index].className = "dot w-4 h-2 rounded-full bg-amber-400 transition-all";
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        // Auto change slides every 8 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 8000);
+
+    </script>
+</body>
+</html>
